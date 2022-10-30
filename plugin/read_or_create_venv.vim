@@ -1,5 +1,6 @@
-function ReadOrCreateVenv() abort
-    echom('READ OR CREATE VENV')
+echom 'plugin read or crate venv'
+function s:read_or_create_venv() abort
+    echom 'plugin function read or crate venv'
     let s:virtual_env = getcwd() . '/.venv'
     if isdirectory(s:virtual_env)
         let $VIRTUAL_ENV = s:virtual_env
