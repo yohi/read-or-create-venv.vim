@@ -1,7 +1,5 @@
 function! read_or_create_venv#ReadOrCreateVenv() abort
     let s:virtual_env = getcwd() . '/.venv'
-    echom(s:virtual_env)
-    echom(isdirectory(s:virtual_env))
     if isdirectory(s:virtual_env)
         let $VIRTUAL_ENV = s:virtual_env
     else
@@ -14,8 +12,6 @@ function! read_or_create_venv#ReadOrCreateVenv() abort
         endif
         let $VIRTUAL_ENV = s:virtual_env
     endif
-    echom('after')
-    echom(s:virtual_env)
 
     let g:python3_host_prog = s:virtual_env . '/bin/python'
     let $PATH = s:virtual_env . '/bin:' . $PATH
