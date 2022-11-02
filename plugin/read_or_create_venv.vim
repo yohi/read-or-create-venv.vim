@@ -1,4 +1,4 @@
-echom('read_or_create_venv function exec')
+" echom('read_or_create_venv function exec')
 let s:virtual_env = getcwd() . '/.venv'
 if isdirectory(s:virtual_env)
     let $VIRTUAL_ENV = s:virtual_env
@@ -7,7 +7,7 @@ else
     let s:python3 = system('which python3')
     let s:virtual_env = $HOME . '/.vim/vimvenv'
     if !isdirectory(s:virtual_env)
-        echom('install vim virtualenv')
+        " echom('install vim virtualenv')
         call system('python3 -m venv ' . s:virtual_env)
     endif
     let $VIRTUAL_ENV = s:virtual_env
@@ -24,6 +24,6 @@ if strlen(g:pythonpath) == 0
     let $PYTHONPATH = getcwd()
 endif
 
-echom(g:pythonpath)
-echom($PYTHONPATH)
-echom($VIRTUAL_ENV)
+" echom(g:pythonpath)
+" echom($PYTHONPATH)
+" echom($VIRTUAL_ENV)
